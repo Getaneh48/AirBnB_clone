@@ -1,0 +1,29 @@
+@import url("4-filters.css");
+
+.filters>.locations, .filters>.amenities{
+	height:100%;
+	width:25%;
+}
+
+.filters>.locations{
+	border-right:1px solid #DDDDDD;
+}
+
+.filters>div{
+	display:flex;
+	justify-content:center;
+	flex-direction:column;
+	float:left;
+	text-indent:20px;
+}
+
+.filters>div h3{
+	font-weight:600;
+	margin:0;
+}
+
+.filters>div h4{
+	font-weight:400;
+	font-size:14px;
+	margin:0;
+}

@@ -1,0 +1,67 @@
+@import url("8-places.css");
+
+.places article .amenities{
+	float:left;
+	margin-top:40px;
+	display: flex;
+	flex-direction: column;
+			
+}
+
+.places article .amenities>h2{
+	font-size:16px;
+	border-bottom:1px solid #DDDDDD;
+	margin-bottom:10px;
+}
+
+.places article .amenities ul li{
+	display:flex;
+	align-items:center;
+}
+
+.places article .amenities ul li span.tv.icon,
+.places article .amenities ul li span.wifi.icon,
+.places article .amenities ul li span.pet.icon{
+	display:inline-block;
+	background-image:url("../images/icon_tv.png");
+	background-repeat:no-repeat;
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	margin-right:10px;
+}
+
+.places article .amenities ul li span.wifi.icon{
+	background-image:url("../images/icon_wifi.png");
+}
+
+.places article .amenities ul li span.pet.icon{
+	background-image:url("../images/icon_pets.png");
+}
+
+.reviews{
+	float:left;
+	margin-top:40px;
+	display:flex;
+	flex-direction:column;
+}
+
+.reviews ul li{
+	display:flex;
+	flex-direction:column;
+}
+
+.reviews>h2{
+	font-size:16px;
+	border-bottom:1px solid #DDDDDD;
+	margin-bottom:10px;
+}
+
+.reviews ul li p{
+	font-size:12px;
+}
+
+.reviews ul li h3{
+	font-size:14px;
+}
