@@ -3,6 +3,7 @@
 a module that defines a command interpreter
 """
 import cmd
+import re
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
@@ -52,6 +53,58 @@ class HBNBCommand(cmd.Cmd):
         Help for the quit command
         """
         print("Quit command to exit the program")
+
+    def is_class_method_format(self, line):
+        """
+        Checks if a given string is in the format
+        '<classname>.<method>(args)'
+
+        Args:
+            line (str): string argument
+
+        Returns:
+            bool: True or False
+        """
+
+        pattern = r"^([A-Z][a-z0-9]*\.)?[a-z_][a-z0-9_]*\(([^)]*)\)$"
+
+        return bool(re.match(pattern, line))
+
+    def extract_method_info(self, text):
+        """Extracts method name and arguments (if provided) from a string.
+
+        Args:
+            text (str): The string to extract information
+                        from (format: "method(args)").
+
+        Returns:
+            tuple: A tuple containing the extracted
+                   method name (or None if invalid)
+                   and a list of arguments (or None if no arguments).
+        """
+
+        pattern = r"^([a-z_][a-z0-9_]*)\(([^)]*)\)$"
+        match = re.match(pattern, text)
+        if match:
+            method_name = match.group(1)
+            # Split arguments
+            args = match.group(2).split(',')
+            # Remove leading/trailing whitespaces
+            args = [arg.strip().strip("'").strip('"') for arg in args]
+            return method_name, args
+        else:
+            return None, None
+
+    def precmd(self, line):
+        if self.is_class_method_format(line):
+            ls = line.split('.')
+            className = ls[0]
+            method, args = self.extract_method_info(ls[1])
+            newline = f"{method} {className} {' '.join(args)}"
+            print(newline)
+            return newline
+
+        return line
 
     def do_create(self, modelName):
         """
