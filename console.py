@@ -101,7 +101,6 @@ class HBNBCommand(cmd.Cmd):
             className = ls[0]
             method, args = self.extract_method_info(ls[1])
             newline = f"{method} {className} {' '.join(args)}"
-            print(newline)
             return newline
 
         return line
@@ -267,6 +266,21 @@ class HBNBCommand(cmd.Cmd):
         """
 
         print("Ex: update <class name> <id> <attrib> <value>")
+
+    def do_count(self, modelName):
+        """
+        counts a specific class
+        """
+
+        if modelName not in self.models:
+            print("** class doesn't exist **")
+        else:
+            d_items = storage.all()
+            count = 0
+            for key in d_items.keys():
+                if key.startswith(modelName):
+                    count += 1
+            print(count)
 
 
 if __name__ == '__main__':
