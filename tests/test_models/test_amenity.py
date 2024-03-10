@@ -66,8 +66,8 @@ class TestAmenity(unittest.TestCase):
         self.assertIsInstance(getattr(self.amenity, 'created_at'), datetime)
         self.assertIsInstance(getattr(self.amenity, 'updated_at'), datetime)
         # Regular e    xpression for UUID4 format
-        id_format = r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
-        self.assertTrue(re.match(id_format, self.amenity.id))
+        id_f = r"[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        self.assertTrue(re.match(id_f, self.amenity.id))
 
     def test_init_kwargs(self):
         """
