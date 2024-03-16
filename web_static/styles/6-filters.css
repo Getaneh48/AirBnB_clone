@@ -20,20 +20,26 @@
     display: none;
 }
 
-.filters .locations .popover ul,
-.filters .amenities .popover ul{
+.filters .locations .popover>li ul {
     margin:0;
-    margin-top:10px;
     padding:0;
 }
+.filters .locations .popover>li ul>li{
+    padding-left:22px;
+}
 
-.filters .locations .popover ul li,
-.filters .amenities .popover ul li {
+.filters .locations .popover>li {
     list-style: none;
 }
 
-.filters .locations .popover ul>h2 {
+.filters .locations .popover ul li,
+.filters .amenities .popover li {
+    list-style: none;
+}
+
+.filters .locations .popover>li h2 {
     font-size:16px;
+    margin-bottom:0px;
 }
 
 .filters .locations:hover .popover,
