@@ -1,0 +1,42 @@
+@import url('5-filters.css');
+
+.filters .locations,
+.filters .amenities {
+    position:relative;
+}
+.filters .locations .popover,
+.filters .amenities .popover{
+    border:1px solid #DDDDDD;
+    background-color: #FAFAFA;
+    position: absolute;
+    top:70px;
+    width:100%;
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    padding-top:10px;
+    padding-bottom:20px;
+    border-radius: 4px;
+    display: none;
+}
+
+.filters .locations .popover ul,
+.filters .amenities .popover ul{
+    margin:0;
+    margin-top:10px;
+    padding:0;
+}
+
+.filters .locations .popover ul li,
+.filters .amenities .popover ul li {
+    list-style: none;
+}
+
+.filters .locations .popover ul>h2 {
+    font-size:16px;
+}
+
+.filters .locations:hover .popover,
+.filters .amenities:hover .popover {
+    display: block;
+}
