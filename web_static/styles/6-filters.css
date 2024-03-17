@@ -11,6 +11,7 @@
     position: absolute;
     top:70px;
     width:100%;
+    z-index:99990;
     margin:0;
     padding:0;
     box-sizing: border-box;
